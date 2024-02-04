@@ -1,14 +1,23 @@
 #[derive(Debug)]
-struct Color(i32, i32, i32);
-#[derive(Debug)]
-struct Point(i32, i32, i32);
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
 
 fn main() {
-    let black = Color(0,0,0);
-    let origin = dbg!(Point(0,0,0));
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
 
-    println!("origin is {:?}", origin);
-    println!("black is {:?}", black);
-
-    println!("origin is {:?}", origin);
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        rect1.area()
+    );
 }
