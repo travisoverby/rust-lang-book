@@ -18,6 +18,6 @@ fn value_in_cents(coin: Coin) -> u8 {
 }
 
 fn main() {
-    let m = Message::Write(String::from("hello"));
-    m.call();
+    let coin = Coin::Penny;
+    value_in_cents(coin);
 }
